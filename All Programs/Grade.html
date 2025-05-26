@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice2</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("Enter your marks");
+      let grade;
+      if (num >=90 && num <=100) {
+        grade="A";
+      }
+      else if (num >=70 && num <=89)
+      {
+        grade="B";
+      }
+      else if (num >=60 && num <=69)
+      {
+        grade="C";
+      }
+      else if (num >=40 && num<=59)
+      {
+        grade="D";
+      }
+      else if (num >=0 && num<=39)
+      {
+        grade="F";
+      }
+      document.write("Your grade is "+grade);
+    </script>
+  </body>
+</html>

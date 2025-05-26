@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="alertdialog()">alert</button>
+    <button onclick="promptdialog()">prompt</button>
+    <button onclick="confirmdialog()">confirm</button>
+    <br />
+    <div id="seemore">
+      <p>Please hide this line</p>
+    </div>
+    <button onclick="toggleseemore()">Toggle button</button>
+    <br />
+    <script>
+        //hide function
+function toggleseemore(){
+    var target=document.getElementById("seemore");
+    if(target.style.display =="none"){
+        target.style.display="block";
+    }
+    else{
+        target.style.display="none";
+    }
+}
+
+      //Dialog boxes
+      function alertdialog() {
+        alert("Revision class");
+      }
+
+      function promptdialog() {
+        var pdialog = prompt("Enter your name:", "Ram");
+        document.write(pdialog);
+      }
+
+      function confirmdialog() {
+        var cdialog = confirm("Revision class");
+        
+      }
+
+      
+    </script>
+  </body>
+</html>

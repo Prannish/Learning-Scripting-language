@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height:100px;
+            width :100px;
+            background-color:dodgerblue;
+            color:white;
+            border:1px solid black;
+
+        }
+    </style>
+</head>
+<body>
+   
+    <button id="btn1" onclick="console.log('button was clicked'); alert('clicked');">click me</button>
+    <button ondblclick="console.log('button was clicked2 times'); alert('clicked 2 times');">click me 2 times</button>
+    <button id="btn2">Event listener</button>
+    <div onmouseover="console.log('You are inside div');">
+    This is a box
+   </div>
+   <script>
+let btn1=document.querySelector("#btn1");
+btn1.onclick=()=>{
+    console.log("btn was clicked");
+    let a =25;//random kaam
+    a++;
+    console.log(a);
+}
+let div=document.querySelector("div");
+div.onmouseover=()=>{
+    console.log("You are inside div by arrow function");
+} 
+
+//event listener can be used more than once in a element 
+let btn2=document.querySelector("#btn2");
+const third=()=>{
+    console.log("actionlistener button is clicked third time");
+}
+btn2.addEventListener("click",()=>{
+    console.log("actionlistener button is clicked")
+});
+btn2.addEventListener("click",()=>{
+    console.log("actionlistener button is clicked second time")
+});
+btn2.addEventListener("click",third);
+btn2.removeEventListener("click",third);
+    </script>
+</body>
+</html>

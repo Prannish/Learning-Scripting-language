@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #box {
+      height: 250px;
+      width: 200px;
+      background-color: blueviolet;
+    }
+  </style>
+  <body>
+    <div id="box" name="js">
+      <ul>
+        list
+      </ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </div>
+    <script>
+      let newbtn = document.createElement("button");
+      newbtn.innerText = "clickme!";
+      let div = document.querySelector("div");
+      div.append(newbtn);
+      //append adds at the end of node
+      //prepend adds at the start of the node
+      //before adds(outside) before the node
+      //after adds (outside) after the node
+      //remove()  removes the element
+    </script>
+  </body>
+</html>

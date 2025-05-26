@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   <div> <h1 id="heading">Document Object Model</h1>
+    <h2 class="heading1">Hello world</h2>
+  </div>
+    <p>Let's learn about Dom concepts in details</p>
+    <p>Never give up</p>
+    <script>
+      let head = document.getElementById("heading");
+      console.dir(head);
+      let head1 = document.getElementsByClassName("heading1");
+      console.dir(head1);
+      let parag = document.getElementsByTagName("p");
+      console.dir(parag);
+      let firstelement = document.querySelector("p");
+      console.dir(firstelement);
+      let allelement = document.querySelectorAll("p");
+      console.dir(allelement);
+      let div=document.querySelector("div");
+      console.dir(div);
+      let heading=document.querySelector("h1");
+      console.dir(heading);
+    </script>
+  </body>
+</html>

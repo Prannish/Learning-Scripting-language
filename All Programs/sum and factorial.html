@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //take a number n as input from user.create an array of number from 1 to n.
+      //use the reduce menthod to calculate sum of all numbers in the array.
+      //use the reduce method to calculate product of all numbers in the array.
+
+      let n = prompt("Enter a number:");
+      let arr = [];
+      for (let i = 1; i <= n; i++) {
+        arr[i - 1] = i;
+      }
+      console.log(arr);
+
+      let sum = arr.reduce((res, curr) => {
+        return res + curr;
+      });
+      console.log("sum is =" + sum);
+
+      let fact = arr.reduce((res, curr) => {
+        return res * curr;
+      });
+      console.log("Factorial is =" + fact);
+    </script>
+  </body>
+</html>
