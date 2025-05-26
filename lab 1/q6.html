@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>q6</title>
+    <style>
+        form {
+            max-width: 300px;
+            margin: auto;
+            padding: 20px;  
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Signup Form</h1>
+    <form id="signupForm" onsubmit="validateForm(event)">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <div id="nameError" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <div id="emailError" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <div id="passwordError" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="cPassword">Confirm Password:</label>
+            <input type="password" id="cPassword" name="cPassword">
+            <div id="cPasswordError" class="error"></div>
+        </div>
+        <button type="submit">Signup</button>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const cPassword = document.getElementById('cPassword').value;
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const cPasswordError = document.getElementById('cPasswordError');
+            nameError.textContent = '';
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            cPasswordError.textContent = '';
+
+            let isValid = true;
+            if (name === '') {
+                nameError.textContent = 'Name is required.';
+                isValid = false;
+            }
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = 'Invalid email address.';
+                isValid = false;
+            }
+            if (password.length < 6) {
+                passwordError.textContent = 'Password must be at least 6 characters long.';
+                isValid = false;
+            }
+            if (password !== cPassword) {
+                cPasswordError.textContent = 'Passwords do not match.';
+                isValid = false;
+            }
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
+</body>
+</html>

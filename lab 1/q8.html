@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialog Box Examples</title>
+  </head>
+  <body>
+    <h1>Question 8</h1>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showConfirmation()">Show Confirmation</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+
+    <p id="result"></p>
+
+    <script>
+      // Alert dialog box
+      function showAlert() {
+        alert("This is an alert dialog box!");
+      }
+
+      // Confirmation dialog box
+      function showConfirmation() {
+        const userConfirmed = confirm("Do you confirm this action?");
+        if (userConfirmed) {
+          document.getElementById("result").textContent =
+            "User confirmed the action.";
+        } else {
+          document.getElementById("result").textContent =
+            "User canceled the action.";
+        }
+      }
+
+      // Prompt dialog box
+      function showPrompt() {
+        const userInput = prompt("Please enter your name:", "Guest");
+        if (userInput !== null && userInput.trim() !== "") {
+          document.getElementById("result").textContent = `Hello, ${userInput}!`;
+        } else {
+          document.getElementById("result").textContent =
+            "No name was entered.";
+        }
+      }
+    </script>
+  </body>
+</html>
